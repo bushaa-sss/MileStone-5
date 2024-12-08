@@ -1,0 +1,141 @@
+s<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!--!--------------------------------- MAIN HEADING ------------------------------->
+
+      <header>
+        <h1>Resume Builder</h1>
+      </header>
+
+      <!--!---------------------------------- FORM -------------------------------->
+
+      <form id="resumeForm">
+
+        <!--!--------------------------- PERSONAL INFORMATION ---------------------------->
+
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required  placeholder="eg: Buhsra"/>
+
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required placeholder="eg: Saleh"/>
+
+          <label for="contactNumber">Contact Number:</label>
+          <input type="tel" id="contactNumber" name="contactNumber" required placeholder="eg: 0331-4523979"/>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="eg: abc@example.com"/>
+
+          <label for="profilePhoto">Profile Photo:</label>
+          <input type="file" accept="image/*" id="profilePhoto" />
+        </fieldset>
+
+        <!--!-------------------------- EDUCATION INFORMATION ----------------------->
+
+        <fieldset>
+          <legend>Education</legend>
+          <textarea
+            id="education"
+            name="education"
+            rows="4"
+            placeholder="Enter your education details here..."
+            required
+          ></textarea>
+        </fieldset>
+        <fieldset>
+
+          <!-- !--------------------------- SKILLS SECTION ---------------------->
+
+          <legend>Skills</legend>
+
+        <button type="button" id="toggle-skills-btn" onclick="toggleSkills()">Hide Skills</button>
+        
+        <div id="skills-section">
+            <textarea name="skills" id="skills" cols="60" rows="10" placeholder="describe briefly" required></textarea>
+        </div>
+        </fieldset>
+
+        <!--!------------------------ WORK EXPERIENCE SECTION --------------------->
+
+        <fieldset>
+          <legend>Experience</legend>
+          <textarea
+            id="workExperience"
+            name="workExperience"
+            rows="4"
+            placeholder="Enter your experiance briefly"
+            required
+          ></textarea>
+        </fieldset>
+
+        <!--!----------------------------- LANGUAGES SECTION -------------------------------->
+
+        <fieldset>
+          <legend>Language</legend>
+          <textarea
+            id="languageProficiencies"
+            name="languageProficiencies"
+            rows="4"
+            placeholder="Enter your language proficiencies"
+            required
+          ></textarea>
+        </fieldset>
+
+        <!--!---------------------------- GENERATE RESUME BUTTON -------------------------->
+
+        <div class="buttons">
+          <button type="reset" id="resetBtn">Reset</button>
+          <button type="submit" id="generateBtn">Generate Resume</button>
+        </div>
+      </form>
+
+      <!--!------------------------------RESUME DIV----------------------------------------->
+
+      </div>
+      <div class="outer-resume-div">
+        <div id="resumeOutput" class="resume-output"></div>
+      <button type="button" id="saveBtn" style="display: none;">Save Changes</button>
+
+      </div>
+      <button type="button" id="saveBtn" style="display: none;">Save Changes</button>
+          </div>
+
+      <!--!---------------------------- UNIQUE URL SECTION  -------------------------->
+          <div class="mainDiv">
+          <div class="unique-url-section">
+            <label for="username">Enter Username for Unique URL:</label>
+            <input type="text" id="username" placeholder="Enter your username" required />
+
+            <button type="button" onclick="generateUniqueURL()">Generate Unique URL</button>
+            <div id="urlOutput"></div>
+          </div>
+          
+      <!--!---------------------------- DOWNLOAD AS PDF BUTTON -------------------------->
+
+          <div class="pdf-download-section">
+            <button type="button" onclick="downloadHTMLpdf()">Download as PDF</button>
+          </div>
+
+       <!--!---------------------------- SHAREABLE BUTTON -------------------------->
+          
+          <div id="shareSection">
+            <button id="shareBtn">Share Resume</button>
+            <p id="urlOutput"></p>
+          </div>
+          </div>
+          
+      <!--!---------------------------- RESUME FUNCTIONALITY -------------------------->
+
+    <script src="resume.ts"></script>
+  </body>
+</html>
